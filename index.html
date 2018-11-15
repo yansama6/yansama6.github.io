@@ -62,6 +62,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-firstart" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/15/firstart/" class="article-date">
+  <time datetime="2018-11-15T12:22:35.000Z" itemprop="datePublished">2018-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/15/firstart/">firstart</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="asdasdsdnl"><a href="#asdasdsdnl" class="headerlink" title="asdasdsdnl"></a>asdasdsdnl</h5><pre><code>def get_first(self):
+    for k in LAN:
+        l = LAN[k]
+        FIRST[k] = list()
+        for s in l:
+            if not (s[0].isupper()):
+                FIRST[k].append(s[0])
+    for i in range(2):
+        for k in LAN:
+            l = LAN[k]
+            for s in l:
+                if (s[0].isupper()):
+                    FIRST[k].extend(FIRST[s[0]])
+                    FIRST[k] = list(set(FIRST[k]))  #去除重复
+    print(&quot;文法为：%s&quot; % LAN)
+    print(&quot;FIRST集为：%s&quot; % FIRST)
+</code></pre><p><img src="http://p3.pstatp.com/large/666d00001c59a9ece8de" alt="ihu"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/15/firstart/" data-id="cjoikfqwz00001alh92i5c6m1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/15/hello-world/" class="article-date">
@@ -97,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/hello-world/" data-id="cjoijxzt40000pilhxb1hug7u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/15/hello-world/" data-id="cjoikfqx400011alhrs6gz03r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,6 +189,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/15/firstart/">firstart</a>
+          </li>
         
           <li>
             <a href="/2018/11/15/hello-world/">Hello World</a>
