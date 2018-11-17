@@ -1,23 +1,157 @@
-extends base
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>firstart | Hexo</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="asdasdsdnldef get_first(self):     for k in LAN:         l = LAN[k]         FIRST[k] = list()         for s in l:             if not (s[0].isupper()):                 FIRST[k].append(s[0])     for i i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="firstart">
+<meta property="og:url" content="http://yoursite.com/2018/11/15/firstart/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="asdasdsdnldef get_first(self):     for k in LAN:         l = LAN[k]         FIRST[k] = list()         for s in l:             if not (s[0].isupper()):                 FIRST[k].append(s[0])     for i i">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://p3.pstatp.com/large/666d00001c59a9ece8de">
+<meta property="og:updated_time" content="2018-11-15T12:23:14.851Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="firstart">
+<meta name="twitter:description" content="asdasdsdnldef get_first(self):     for k in LAN:         l = LAN[k]         FIRST[k] = list()         for s in l:             if not (s[0].isupper()):                 FIRST[k].append(s[0])     for i i">
+<meta name="twitter:image" content="http://p3.pstatp.com/large/666d00001c59a9ece8de">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head></html>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">Hexo</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-firstart" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/11/15/firstart/" class="article-date">
+  <time datetime="2018-11-15T12:22:35.000Z" itemprop="datePublished">2018-11-15</time>
+</a>
+		</span>
+		<span class="meta-elements author">John Doe</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      firstart
+    </h1>
+  
 
-block title
-  title= page.title + ' - ' + config.title
+	</header>
+	<div class="entry-content">
+		
+    	<h5 id="asdasdsdnl"><a href="#asdasdsdnl" class="headerlink" title="asdasdsdnl"></a>asdasdsdnl</h5><pre><code>def get_first(self):
+    for k in LAN:
+        l = LAN[k]
+        FIRST[k] = list()
+        for s in l:
+            if not (s[0].isupper()):
+                FIRST[k].append(s[0])
+    for i in range(2):
+        for k in LAN:
+            l = LAN[k]
+            for s in l:
+                if (s[0].isupper()):
+                    FIRST[k].extend(FIRST[s[0]])
+                    FIRST[k] = list(set(FIRST[k]))  #去除重复
+    print(&quot;文法为：%s&quot; % LAN)
+    print(&quot;FIRST集为：%s&quot; % FIRST)
+</code></pre><p><img src="http://p3.pstatp.com/large/666d00001c59a9ece8de" alt="ihu"></p>
 
-block content
-  .post
-    h1.post-title= page.title
-    .post-meta= page.date.format('YYYY-MM-DD')
-      if theme.busuanzi == true
-        script(src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',type='text/javascript')
-        span(class='meta-space')='  |  '
-        span#busuanzi_container_page_pv
-          span#busuanzi_value_page_pv
-          span= ' ' + __('浏览')
-    //文章内容
-    .post-content
-      != page.content
-    //文章标签
-    include _partial/tag
-    //评论
-    if page.comments
-      include _partial/comments
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/15/exam/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Hexo</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2018 John Doe<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>

@@ -1,33 +1,622 @@
-extends base
-- var current_title = page.title || tag.name || category.name || site.title
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+</head></html>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">Hexo</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/">Home</a></li><li><a href="/archives">Archives</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			<li><a href="/atom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+	</div>
+</header>
+    <div id="main">
+      
+  
+    <article id="post-exam" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/11/15/exam/" class="article-date">
+  <time datetime="2018-11-15T14:58:16.136Z" itemprop="datePublished">2018-11-15</time>
+</a>
+		</span>
+		<span class="meta-elements author">John Doe</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+	</header>
+	<div class="entry-content">
+		
+    	<h2 id="一个考试管理系统的项目"><a href="#一个考试管理系统的项目" class="headerlink" title="一个考试管理系统的项目"></a>一个考试管理系统的项目</h2><h4 id="我们目前负责的是写一个前端页面，我分到的是教师管理页面和管理员管理页面。这是目前的代码，还有待改进"><a href="#我们目前负责的是写一个前端页面，我分到的是教师管理页面和管理员管理页面。这是目前的代码，还有待改进" class="headerlink" title="我们目前负责的是写一个前端页面，我分到的是教师管理页面和管理员管理页面。这是目前的代码，还有待改进"></a>我们目前负责的是写一个前端页面，我分到的是教师管理页面和管理员管理页面。这是目前的代码，还有待改进</h4><p>html：</p>
+<pre><code>    &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;zh&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;西南林大教师端后台&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://www.jq22.com/jquery/bootstrap-3.3.4.css&quot;&gt;
+    &lt;script src=&quot;http://www.jq22.com/jquery/jquery-1.10.2.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;http://www.jq22.com/jquery/bootstrap-3.3.4.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;js/temp.js&quot;&gt;&lt;/script&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
 
-block title
-  if config.subtitle
-    title= config.title + ' - ' + config.subtitle
-  else
-    title= config.title
-block content
-  for post in page.posts.toArray()
-    .post
-      h2.post-title
-        include _partial/helpers
-        a(href=url_for(post.path))
-          +title(post)
-      .post-meta= post.date.format(config.date_format)
-      if post.description
-        .post-content
-          != post.description
-      else if post.excerpt
-        .post-content
-          != post.excerpt
-      else if post.content
-        - var br = post.content.indexOf('\n')
-        if br < 0
-          .post-content
-            != post.content
-        else
-          .post-content
-            != post.content.substring(0, br)
+&lt;/head&gt;
 
-  include _partial/paginator
+&lt;div style=&quot;&quot;&gt;&lt;/div&gt;
 
+&lt;body style=&quot;position: relative;z-index: auto&quot;&gt;
+&lt;div class=&quot;range&quot;&gt;
+    &lt;ul class=&quot;nav navbar-nav navbar-left&quot;&gt;
+        &lt;a class=&quot;navbar-brand text-decoration:none&quot; style=&quot;text-decoration: none&quot;&gt;
+            在线考试系统&lt;/a&gt;
+    &lt;/ul&gt;
+    &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+        &lt;li class=&quot;dropdown&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;My account &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+            &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&quot;wrapper&quot;&gt;
+    &lt;div class=&quot;overlay&quot;&gt;&lt;/div&gt;
+    &lt;nav class=&quot;navbar navbar-inverse navbar-fixed-top&quot; id=&quot;sidebar-wrapper&quot; role=&quot;navigation&quot;&gt;
+        &lt;ul class=&quot;nav sidebar-nav&quot;&gt;
+            &lt;li class=&quot;sidebar-brand&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;
+                    教师管理页面
+                &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;dropdown&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;i class=&quot;fa fa-fw fa-plus&quot;&gt;&lt;/i&gt; 学生管理 &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                    &lt;li class=&quot;dropdown-header&quot;&gt;学生操作项&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt; 学生列表 &lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt; 添加学生 &lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt; 加入班级 &lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt; 成绩查询 &lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-fw fa-folder&quot;&gt;&lt;/i&gt; 考试管理 &lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-fw fa-file-o&quot;&gt;&lt;/i&gt; 题库管理 &lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;!-- /#sidebar-wrapper --&gt;
+
+    &lt;!-- Page Content --&gt;
+    &lt;div id=&quot;page-content-wrapper&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;hamburger is-closed animated fadeInLeft&quot; data-toggle=&quot;offcanvas&quot;&gt;
+            &lt;span class=&quot;hamb-top&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;hamb-middle&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;hamb-bottom&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;!-- /#page-content-wrapper --&gt;
+
+&lt;/div&gt;
+&lt;!-- /#wrapper --&gt;
+
+&lt;div class=&quot;replace&quot;&gt;
+    &lt;div class=&quot;panel panel-primary&quot;&gt;
+        &lt;div class=&quot;panel panel-heading&quot;&gt;
+            管理
+        &lt;/div&gt;
+        &lt;div class=&quot;panel panel-body&quot;&gt;
+            &lt;h1&gt;asdsdfsda&lt;/h1&gt;
+            &lt;h1&gt;asdsdfsda&lt;/h1&gt;
+            &lt;h1&gt;asdsdfsda&lt;/h1&gt;
+            &lt;h1&gt;asdsdfsda&lt;/h1&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    $(document).ready(function () {
+        var trigger = $(&apos;.hamburger&apos;),
+            overlay = $(&apos;.overlay&apos;),
+            isClosed = false;
+
+        trigger.click(function () {
+            hamburger_cross();
+        });
+
+        function hamburger_cross() {
+
+            if (isClosed == true) {
+                overlay.hide();
+                trigger.removeClass(&apos;is-open&apos;);
+                trigger.addClass(&apos;is-closed&apos;);
+                isClosed = false;
+            } else {
+                overlay.show();
+                trigger.removeClass(&apos;is-closed&apos;);
+                trigger.addClass(&apos;is-open&apos;);
+                isClosed = true;
+            }
+        }
+
+        $(&apos;[data-toggle=&quot;offcanvas&quot;]&apos;).click(function () {
+            $(&apos;#wrapper&apos;).toggleClass(&apos;toggled&apos;);
+        });
+    });
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>css：</p>
+<pre><code>@import &quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css&quot;;
+</code></pre><hr>
+<pre><code>/*-------------------------------*/
+/*           VARIABLES           */
+/*-------------------------------*/
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.nav .open &gt; a {
+    background-color: transparent;
+}
+.nav .open &gt; a:hover {
+    background-color: transparent;
+}
+.nav .open &gt; a:focus {
+    background-color: transparent;
+}
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+#wrapper {
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    padding-left: 0;
+    transition: all 0.5s ease;
+}
+#wrapper.toggled {
+    padding-left: 220px;
+}
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+#wrapper.toggled #page-content-wrapper {
+    margin-right: -220px;
+    position: absolute;
+}
+#sidebar-wrapper {
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    background: #1a1a1a;
+    height: 100%;
+    left: 220px;
+    margin-left: -220px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.5s ease;
+    width: 0;
+    z-index: 1000;
+}
+#sidebar-wrapper::-webkit-scrollbar {
+    display: none;
+}
+#page-content-wrapper {
+    padding-top: 70px;
+    width: 100%;
+}
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+.sidebar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 220px;
+}
+.sidebar-nav li {
+    display: inline-block;
+    line-height: 20px;
+    position: relative;
+    width: 100%;
+}
+.sidebar-nav li:before {
+    background-color: #1c1c1c;
+    content: &apos;&apos;;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 3px;
+    z-index: -1;
+}
+.sidebar-nav li:first-child a {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+.sidebar-nav li:nth-child(2):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:nth-child(6):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:nth-child(7):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:nth-child(8):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:nth-child(9):before {
+    background-color: #ffffff;
+}
+.sidebar-nav li:hover:before {
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 100%;
+}
+.sidebar-nav li a {
+    color: #dddddd;
+    display: block;
+    padding: 10px 15px 10px 30px;
+    text-decoration: none;
+}
+.sidebar-nav li.open:hover before {
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 100%;
+}
+.sidebar-nav .dropdown-menu {
+    background-color: #222222;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus {
+    background-color: transparent;
+    color: #000000;
+    text-decoration: none;
+}
+.sidebar-nav &gt; .sidebar-brand {
+    font-size: 20px;
+    height: 65px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+.hamburger {
+    background: transparent;
+    border: none;
+    display: block;
+    height: 32px;
+    margin-left: 15px;
+    position: fixed;
+    top: 20px;
+    width: 32px;
+    z-index: 999;
+}
+.hamburger:hover {
+    outline: none;
+}
+.hamburger:focus {
+    outline: none;
+}
+.hamburger:active {
+    outline: none;
+}
+.hamburger.is-closed:before {
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.35s ease-in-out;
+    color: #000000;
+    content: &apos;&apos;;
+    display: block;
+    font-size: 14px;
+    line-height: 32px;
+    opacity: 0;
+    text-align: center;
+    width: 100px;
+}
+.hamburger.is-closed:hover before {
+    -webkit-transform: translate3d(-100px, 0, 0);
+    -webkit-transition: all 0.35s ease-in-out;
+    display: block;
+    opacity: 1;
+}
+.hamburger.is-closed:hover .hamb-top {
+    -webkit-transition: all 0.35s ease-in-out;
+    top: 0;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+    -webkit-transition: all 0.35s ease-in-out;
+    bottom: 0;
+}
+.hamburger.is-closed .hamb-top {
+    -webkit-transition: all 0.35s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 5px;
+}
+.hamburger.is-closed .hamb-middle {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: -2px;
+    top: 50%;
+}
+.hamburger.is-closed .hamb-bottom {
+    -webkit-transition: all 0.35s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 5px;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.hamburger.is-open .hamb-top {
+    -webkit-transform: rotate(45deg);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+    background-color: #000000;
+    margin-top: -2px;
+    top: 50%;
+}
+.hamburger.is-open .hamb-middle {
+    background-color: #000000;
+    display: none;
+}
+.hamburger.is-open .hamb-bottom {
+    -webkit-transform: rotate(-45deg);
+    -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+    background-color: #000000;
+    margin-top: -2px;
+    top: 50%;
+}
+.hamburger.is-open:before {
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.35s ease-in-out;
+    color: #000000;
+    content: &apos;&apos;;
+    display: block;
+    font-size: 14px;
+    line-height: 32px;
+    opacity: 0;
+    text-align: center;
+    width: 100px;
+}
+.hamburger.is-open:hover before {
+    -webkit-transform: translate3d(-100px, 0, 0);
+    -webkit-transition: all 0.35s ease-in-out;
+    display: block;
+    opacity: 1;
+}
+/*-------------------------------*/
+/*          Dark Overlay         */
+/*-------------------------------*/
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+/* SOME DEMO STYLES - NOT REQUIRED */
+
+body h1,
+body h2,
+body h3,
+body h4 {
+    color: rgba(0, 0, 0, 0.9);
+}
+body p,
+body blockquote {
+    color: rgba(0, 0, 0, 0.7);
+}
+body a {
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: underline;
+}
+body a:hover {
+    color: #000000;
+}
+.range{
+    width: 97%;
+    float: right;
+}
+.replace{
+    width: 96.5%;
+    float: right;
+}
+</code></pre>
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+    <article id="post-firstart" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/11/15/firstart/" class="article-date">
+  <time datetime="2018-11-15T12:22:35.000Z" itemprop="datePublished">2018-11-15</time>
+</a>
+		</span>
+		<span class="meta-elements author">John Doe</span>
+		<div class="commentscount">
+			
+		</div>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2018/11/15/firstart/">firstart</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<h5 id="asdasdsdnl"><a href="#asdasdsdnl" class="headerlink" title="asdasdsdnl"></a>asdasdsdnl</h5><pre><code>def get_first(self):
+    for k in LAN:
+        l = LAN[k]
+        FIRST[k] = list()
+        for s in l:
+            if not (s[0].isupper()):
+                FIRST[k].append(s[0])
+    for i in range(2):
+        for k in LAN:
+            l = LAN[k]
+            for s in l:
+                if (s[0].isupper()):
+                    FIRST[k].extend(FIRST[s[0]])
+                    FIRST[k] = list(set(FIRST[k]))  #去除重复
+    print(&quot;文法为：%s&quot; % LAN)
+    print(&quot;FIRST集为：%s&quot; % FIRST)
+</code></pre><p><img src="http://p3.pstatp.com/large/666d00001c59a9ece8de" alt="ihu"></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+  
+  
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Hexo</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2018 John Doe<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
