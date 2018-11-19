@@ -242,6 +242,263 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/19/Hexo-Github搭建博客详细教程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="constantine.chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cyan's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/19/Hexo-Github搭建博客详细教程/" itemprop="url">Hexo+Github搭建博客详细教程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-19T20:04:48+08:00">
+                2018-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/11/19/Hexo-Github搭建博客详细教程/" class="leancloud_visitors" data-flag-title="Hexo+Github搭建博客详细教程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="使用hexo-Github建博客"><a href="#使用hexo-Github建博客" class="headerlink" title="使用hexo+Github建博客"></a>使用hexo+Github建博客</h2><h5 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h5><blockquote>
+<p>我买的是腾讯云的服务器，已经跑起来一个多月了，才开始着手建立博客的，当时我是打算等这学期毕业再去弄这个博客，但是最近在跟着学校副院长成立了一个项目，已经开始架构前端了，目前前端已经到了收尾阶段，等前端都串连起来就把代码放上来，希望大家指出我们的问题！谢谢大家！<a href="https://yueyuekai520@gmail.com/" target="_blank" rel="noopener">我的邮箱</a></p>
+</blockquote>
+<p><strong><del>本教程只针对Linux用户</del></strong></p>
+<h5 id="一、了解背景"><a href="#一、了解背景" class="headerlink" title="一、了解背景"></a>一、了解背景</h5><blockquote>
+<p>既然要使用hexo和Github建博客首先要知道这两个东西是个什么玩意<br><br><br>hexo:<br></p>
+<blockquote>
+<p>hexo是一个快速、简洁且高效的博客框架。Hexo使用Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。并且它是一款基于Node.js的静态博客框架，出名于依赖少、易于安装使用。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>这里不再赘述Github，有兴趣的同学可以上这个网站，讲解非常清晰。<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git廖雪峰教程</a>据说Github是全球最大的同性交友网站<br><del><strong>笑…</strong></del></p>
+</blockquote>
+</blockquote>
+<h5 id="二、开始实战"><a href="#二、开始实战" class="headerlink" title="二、开始实战"></a>二、开始实战</h5><blockquote>
+<p>打开终端首先建立一个文件夹，名字随意，推荐hexo为文件名字</p>
+</blockquote>
+<pre><code>mkdir hexo
+</code></pre><blockquote>
+<p>建立好了之后进入此文件夹</p>
+</blockquote>
+<pre><code>cd hexo/
+</code></pre><blockquote>
+<p>这里要安装一下</p>
+<ul>
+<li>Node.js</li>
+<li>Git<br>这是搭建hexo的环境<blockquote>
+<p>Git的安装教程在上面的廖雪峰的Git教程里面</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<pre><code>sudo apt install npm
+</code></pre><blockquote>
+<p>安装完成之后检测下环境是否安装完毕</p>
+</blockquote>
+<p><img src="https://note.youdao.com/yws/public/resource/ed8d04d775a2f2294cdc2f6a877c6520/xmlnote/WEBRESOURCEdf2413e0f70ffdde6e91ecef38efb9f8/182" alt="img1"></p>
+<blockquote>
+<p>如图可以看到版本号就表示安装成功<br><br>好了环境配好，只差软件<br><br>安装hexo<br></p>
+</blockquote>
+<pre><code>npm install -g hexo-cli 
+</code></pre><blockquote>
+<p>这个的安装时间有点长，而且它在查找下载的时候总给我一种不舒服的感觉。安装完成之后就是一些初始化问题</p>
+</blockquote>
+<pre><code>hexo init 项目名
+cd 项目名
+</code></pre><blockquote>
+<p>生成静态文件</p>
+</blockquote>
+<pre><code>hexo g
+</code></pre><blockquote>
+<p>启动服务</p>
+</blockquote>
+<pre><code>hexo s
+</code></pre><blockquote>
+<p>打开一个新的标签页，输入localhost:4000<br>接下来你会看到一个欢迎页面，顶端显示一个大大的Hexo</p>
+</blockquote>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><blockquote>
+<p>我这里就不上图片了，如果看到了这个页面，<del>恭喜你</del>，这就表示项目创建成功并而成功跑起来了<br><br>接下来我们要配置Github与其链接，先在你的Github中建立一个名字为XXXX.github.io的库(XXXX为你的Github用户名，这是必须的)<br><br><img src="https://note.youdao.com/yws/public/resource/ed8d04d775a2f2294cdc2f6a877c6520/xmlnote/WEBRESOURCE05105bd1f6485175765c7bc301938e47/232" alt="img2"><br><br>建立了之后转到你的终端，进入你的项目之中，输入如下命令 <del>视情况而定</del></p>
+</blockquote>
+<pre><code>ls
+</code></pre><p><img src="https://note.youdao.com/yws/public/resource/ed8d04d775a2f2294cdc2f6a877c6520/xmlnote/WEBRESOURCEb57386fe325e05a56cd932c809bf85c5/279" alt="img4"></p>
+<blockquote>
+<p>这其中有一个名字为 _config.yml 的文件，这是就是你的博客的配置文件。<br>用你的编辑器打开它！</p>
+</blockquote>
+<p><img src="https://note.youdao.com/yws/public/resource/ed8d04d775a2f2294cdc2f6a877c6520/xmlnote/WEBRESOURCEcdd0b9aca596d1fb1368b8f479c3eb81/230" alt="img3"><br><br>向其中加入上图的代码保存！上图的yansama6是我的github账户名，这里替换成你的。<br>注意在冒号 “:” 之后要一个空格才可以生效<br>这个时候再执行以下命令</p>
+<pre><code>hexo clean
+hexo g
+hexo d
+</code></pre><blockquote>
+<p>部署代码</p>
+</blockquote>
+<pre><code>npm install hexo-deployer-git --save
+hexo d
+</code></pre><blockquote>
+<p>输入你的Github账户名字和密码，这里我提一点，以后写了博客完成之后不要太兴奋急着提交，先启动服务，在本地看一下，是否符合心意，不要做无用功！<br><br>提交成功之后在url栏输入</p>
+</blockquote>
+<pre><code>https://XXXX.github.io
+</code></pre><blockquote>
+<p>如果成功打开页面就是表示搭建博客成功，说通俗就是可以通过网络对其访问了，下面说说主题</p>
+</blockquote>
+<h5 id="三、主题配置"><a href="#三、主题配置" class="headerlink" title="三、主题配置"></a>三、主题配置</h5><blockquote>
+<p>在你的项目目录下有一个theme的文件夹，在这里面放置你下载的主题，主题下载的话去google一个喜欢的就可以了，一般一个主题里面的内容如下图，当然也有可能有出入，都不影响</p>
+</blockquote>
+<p><img src="https://note.youdao.com/yws/public/resource/ed8d04d775a2f2294cdc2f6a877c6520/xmlnote/WEBRESOURCEb57386fe325e05a56cd932c809bf85c5/279" alt="img5"><br></p>
+<blockquote>
+<p>你会发现这里也有一个 _config.yml 文件，这个配置文件是你选择的主题的配置文件，这里面可以添加各种功能，或者删除功能，具体配置请参考主题制作者的github或者其博客，因为我个人喜欢简单的 那我在这里推荐两个简单的主题名字，如果喜欢比较骚的，就可以去google上搜索，有很多选择。</p>
+</blockquote>
+<h4 id="Next"><a href="#Next" class="headerlink" title="Next"></a><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">Next</a></h4><blockquote>
+<p>这个是我用的网站主题，其中有3个样式，比较简单，我很喜欢。<del>作者也有非常详细的配置教程</del></p>
+</blockquote>
+<h4 id="Maupassant"><a href="#Maupassant" class="headerlink" title="Maupassant"></a><a href="https://github.com/icylogic/maupassant-hexo" target="_blank" rel="noopener">Maupassant</a></h4><blockquote>
+<p>这个是另一个简洁的主题，也是一个不错的选择！</p>
+</blockquote>
+<blockquote>
+<p>如果选择好了将其下载下来，把这个主题整个发到你的项目目录下的Theme目录中，然后返回上一层，打开 _config.yml 找到theme，它本身有一个默认的主题landscape，将这个landscape改为你的主题的文件的名字</p>
+</blockquote>
+<p><img src="https://note.youdao.com/yws/public/resource/ed8d04d775a2f2294cdc2f6a877c6520/xmlnote/WEBRESOURCE0bff1611fa17c64d00ecc6a60530b787/277" alt="img6"></p>
+<blockquote>
+<p>保存退出，然后启动本地服务，你会看见主题的变化，如果出现乱码大部分原因是，主题文件缺失具体问题具体分析。<br><br>内容的修改在你的主题的 _config.yml 文件中，具体个性化配置去google就可以了，网上一大堆。<br></p>
+</blockquote>
+<h2 id="四、结语"><a href="#四、结语" class="headerlink" title="四、结语"></a>四、结语</h2><blockquote>
+<p>好了，到这里基本配置就已经完毕了！如果对我的文章内容有什么疑问就发email给我！<br><br>我的邮箱：<a href="mailto:yueyuekai520@gmail.com" target="_blank" rel="noopener">yueyuekai520@gmail.com</a><br><br>谢谢各位的阅读，希望本篇博客可以给你带来帮助！</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Explanation/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1152,7 +1409,7 @@ body a:hover {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1163,7 +1420,7 @@ body a:hover {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
